@@ -70,16 +70,17 @@
 
 #include <Eigen/Dense>
 
-#include <ipa_building_navigation/concorde_TSP.h>
+#include <boost/shared_ptr.hpp>  // rena-patch: ROS2 no longer pulls boost in via ros/ros.h
+
+// rena-patch (ROS2): concorde_TSP dropped (unused — shells out to a binary + ros::package)
 #include <ipa_building_navigation/genetic_TSP.h>
 #include <ipa_room_exploration/meanshift2d.h>
 #include <ipa_room_exploration/fov_to_robot_mapper.h>
 #include <ipa_room_exploration/room_rotator.h>
 #include <ipa_room_exploration/grid.h>
 
-#include <geometry_msgs/Pose2D.h>
-#include <geometry_msgs/Polygon.h>
-#include <geometry_msgs/Point32.h>
+// rena-patch (ROS2): POD geometry_msgs::Pose2D/Point32/Polygon shim (see header)
+#include <ipa_room_exploration/ros1_msg_compat.h>
 
 #define PI 3.14159265359
 

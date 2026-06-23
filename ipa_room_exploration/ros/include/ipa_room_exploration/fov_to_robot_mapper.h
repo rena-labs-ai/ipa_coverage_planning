@@ -66,16 +66,13 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
-// Ros
-#include <ros/ros.h>
-// service
-#include <cob_map_accessibility_analysis/map_accessibility_analysis.h>
+// rena-patch (ROS2): dropped ros/ros.h and cob_map_accessibility_analysis. The
+// accessibility-analysis branch of mapPath is removed; A*/direct-shift remain.
 // OpenCv
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
-// msgs
-#include <geometry_msgs/Pose2D.h>
-#include <geometry_msgs/Polygon.h>
+// msgs (POD compat shim instead of ROS1 geometry_msgs headers)
+#include <ipa_room_exploration/ros1_msg_compat.h>
 // Eigen library
 #include <Eigen/Dense>
 // specific from this package

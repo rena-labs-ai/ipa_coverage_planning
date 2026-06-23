@@ -1,4 +1,4 @@
-#include "ros/ros.h"
+#include <ipa_building_navigation/ros_compat.h>
 
 #include <iostream>
 #include <iomanip>

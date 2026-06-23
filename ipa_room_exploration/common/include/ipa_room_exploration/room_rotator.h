@@ -66,7 +66,7 @@
 
 #include <vector>
 
-#include <geometry_msgs/Pose2D.h>
+#include <ipa_room_exploration/ros1_msg_compat.h>  // rena-patch (ROS2): POD geometry_msgs::Pose2D
 
 
 class RoomRotator

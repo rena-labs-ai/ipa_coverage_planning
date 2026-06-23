@@ -1,27 +1,32 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>ipa_building_msgs</name>
   <version>0.2.0</version>
 
   <description>
-     This package contains common message type definitions for building navigation tasks such as floor plan segmentation into rooms or the optimal trajectory through rooms of a building.
+    Message/action definitions for ipa building navigation. ROS2 port (rena-patches):
+    only the coverage path (RoomExploration.action) is carried over; the floor-plan
+    segmentation and room-sequencing interfaces are intentionally dropped.
   </description>
 
   <license>LGPL for academic and non-commercial use; for commercial use, please contact Fraunhofer IPA</license>
-
   <maintainer email="richard.bormann@ipa.fraunhofer.de">Richard Bormann</maintainer>
   <author>Richard Bormann</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
 
-  <build_depend>message_generation</build_depend>
-  <exec_depend>message_runtime</exec_depend>
-
-  <depend>actionlib</depend>
-  <depend>actionlib_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
-  <depend>std_msgs</depend>
 
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 </package>
-

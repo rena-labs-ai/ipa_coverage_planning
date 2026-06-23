@@ -1,4 +1,4 @@
-#include "ros/ros.h"
+#include <ipa_building_navigation/ros_compat.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
