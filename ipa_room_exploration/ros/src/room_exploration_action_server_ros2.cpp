@@ -41,7 +41,7 @@ using namespace std::placeholders;
 class RoomExplorationServer : public rclcpp::Node
 {
 public:
-  RoomExplorationServer() : rclcpp::Node("room_exploration_server")
+  RoomExplorationServer() : rclcpp::Node("ipa_planner_server")
   {
     min_cell_area_ = this->declare_parameter<double>("min_cell_area", 10.0);
     path_eps_ = this->declare_parameter<double>("path_eps", 2.0);
@@ -56,7 +56,7 @@ public:
       std::bind(&RoomExplorationServer::handleCancel, this, _1),
       std::bind(&RoomExplorationServer::handleAccepted, this, _1));
 
-    RCLCPP_INFO(this->get_logger(), "room_exploration_server (boustrophedon, footprint) ready.");
+    RCLCPP_INFO(this->get_logger(), "ipa_planner_server (boustrophedon, footprint) ready.");
   }
 
 private:

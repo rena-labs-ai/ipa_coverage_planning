@@ -57,11 +57,11 @@ ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 ament_export_dependencies(OpenCV Eigen3 Boost ipa_building_navigation)
 
 # ROS2 coverage action server (wraps the boustrophedon library)
-add_executable(room_exploration_server ros/src/room_exploration_action_server_ros2.cpp)
-target_link_libraries(room_exploration_server room_exploration ${OpenCV_LIBRARIES})
-ament_target_dependencies(room_exploration_server
+add_executable(ipa_planner_server ros/src/room_exploration_action_server_ros2.cpp)
+target_link_libraries(ipa_planner_server room_exploration ${OpenCV_LIBRARIES})
+ament_target_dependencies(ipa_planner_server
   rclcpp rclcpp_action ipa_building_msgs sensor_msgs geometry_msgs cv_bridge)
-install(TARGETS room_exploration_server DESTINATION lib/${PROJECT_NAME})
+install(TARGETS ipa_planner_server DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
